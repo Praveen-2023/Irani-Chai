@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun’s Irani Chai</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover fixed;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid #d4a373;
+            width: 0;
+            animation: typing 4s steps(40, end) forwards, blink-caret .75s step-end infinite;
+            font-size: 1.3rem;
+            color: #d4a373;
+            margin-bottom: 30px;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #d4a373; }
+        }
+
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #d4a373;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #b88a56;
+            transform: translateY(-3px);
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #d4a373;
+        }
+
+        .menu-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation Bar -->
+    <nav class="bg-opacity-90 bg-gray-900 py-4 sticky top-0 z-[999]">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="logo">Arjun’s Irani Chai</a>
+            <div class="flex items-center space-x-8">
+                <div class="flex space-x-4">
+                    <a href="#about" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">About</a>
+                    <a href="#menu" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Menu</a>
+                    <a href="#gallery" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Gallery</a>
+                    <a href="#reviews" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Reviews</a>
+                    <a href="#contact" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Contact</a>
+                </div>
+                <div class="flex space-x-2">
+                    <button onclick="setLanguage('en')" class="text-white text-sm font-bold bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md transition duration-300 ease-in-out">English</button>
+                    <button onclick="setLanguage('kn')" class="text-white text-sm font-bold bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md transition duration-300 ease-in-out">ಕನ್ನಡ</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="relative text-center py-24 md:py-40 px-4 text-white">
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqnFjujw1hqf04-ZmejObExO-Oj3gxYapGWQ0jviXcD8h7_mm235752q_zrvGZM_TnikyPc6FzXeu63kgIAtmbD1CMweDW5P2kdWe8xD9RC9ZuTZtC-GJI97yHGkRDJywaKBU1nOA=s1360-w1360-h1020-rw" alt="Arjun’s Irani Chai Logo" class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-white shadow-lg object-cover" onerror="this.onerror=null;this.src='https://placehold.co/120x120/8B4513/FFFFFF?text=AC';"/>
+            <h1 class="font-cinzel text-5xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg" id="headerTitle">Arjun’s Irani Chai</h1>
+            <div class="typewriter text-xl md:text-2xl text-orange-200 mb-8 drop-shadow-md" id="headerTagline">Served the way it was meant to be.</div>
+            <a href="#menu" class="inline-block bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:bg-orange-700 transform hover:translate-y-[-5px] transition duration-300 ease-in-out" id="headerButton">View Menu</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-black bg-opacity-70 py-16 px-4 md:py-24">
+        <div class="container mx-auto max-w-3xl text-center text-white">
+            <h2 class="font-cinzel text-4xl font-bold mb-10" id="aboutTitle">About Us</h2>
+            <p class="bg-white bg-opacity-10 p-6 rounded-lg border-l-4 border-orange-500 text-lg leading-relaxed shadow-lg" id="aboutText">
+                Welcome to Arjun’s Irani Chai, where every sip takes you back in time.
+                We bring you the traditional Irani chai experience — strong, sweet, brewed with spices,
+                served in kulhad (clay cups), and enjoyed with stories of old Hyderabad.
+            </p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section bg-gray-900 bg-opacity-80 py-16 px-4 md:py-24">
+        <div class="container mx-auto">
+            <h2 class="font-cinzel text-4xl font-bold text-center mb-12 text-white" id="menuTitle">Our Menu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Card 1: Classic Irani Chai -->
+                <div class="menu-item bg-gray-800 bg-opacity-90 border-2 border-dashed border-orange-500 rounded-xl p-6 text-center shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1561065090-68b4e01958b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Classic Irani Chai" class="w-full h-32 object-cover rounded-md mb-4"/>
+                    <h3 class="font-playfair text-2xl font-semibold text-orange-200 mb-3" id="chaiClassicTitle">Classic Irani Chai</h3>
+                    <p class="text-gray-300 text-base" id="chaiClassicDesc">Strong black tea with milk, sugar & cardamom. Served in clay kulhad.</p>
+                    <p class="text-orange-300 font-bold mt-2">₹40</p>
+                </div>
+                <!-- Menu Card 2: Bun Maska -->
+                <div class="menu-item bg-gray-800 bg-opacity-90 border-2 border-dashed border-orange-500 rounded-xl p-6 text-center shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1579871494484-0eb655e7568e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Bun Maska" class="w-full h-32 object-cover rounded-md mb-4"/>
+                    <h3 class="font-playfair text-2xl font-semibold text-orange-200 mb-3" id="bunMaskaTitle">Bun Maska</h3>
+                    <p class="text-gray-300 text-base" id="bunMaskaDesc">Soft bun with fresh butter, perfect for dipping in hot tea.</p>
+                    <p class="text-orange-300 font-bold mt-2">₹50</p>
+                </div>
+                <!-- Menu Card 3: Osmania Biscuits -->
+                <div class="menu-item bg-gray-800 bg-opacity-90 border-2 border-dashed border-orange-500 rounded-xl p-6 text-center shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1562076678-3f2421ec3d07?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Osmania Biscuits" class="w-full h-32 object-cover rounded-md mb-4"/>
+                    <h3 class="font-playfair text-2xl font-semibold text-orange-200 mb-3" id="osmaniaBiscuitsTitle">Osmania Biscuits</h3>
+                    <p class="text-gray-300 text-base" id="osmaniaBiscuitsDesc">Crispy biscuits made with love and a secret recipe passed down generations.</p>
+                    <p class="text-orange-300 font-bold mt-2">₹30</p>
+                </div>
+                <!-- Menu Card 4: Chai Special -->
+                <div class="menu-item bg-gray-800 bg-opacity-90 border-2 border-dashed border-orange-500 rounded-xl p-6 text-center shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1569569970363-df7b6160d111?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chai Special" class="w-full h-32 object-cover rounded-md mb-4"/>
+                    <h3 class="font-playfair text-2xl font-semibold text-orange-200 mb-3" id="chaiSpecialTitle">Chai Special</h3>
+                    <p class="text-gray-300 text-base" id="chaiSpecialDesc">Tea with a twist — ginger, tulsi, or mint infused for extra refreshment.</p>
+                    <p class="text-orange-300 font-bold mt-2">₹45</p>
+                </div>
+                <!-- Menu Card 5: Combo Platter -->
+                <div class="menu-item bg-gray-800 bg-opacity-90 border-2 border-dashed border-orange-500 rounded-xl p-6 text-center shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Combo Platter" class="w-full h-32 object-cover rounded-md mb-4"/>
+                    <h3 class="font-playfair text-2xl font-semibold text-orange-200 mb-3" id="comboPlatterTitle">Combo Platter</h3>
+                    <p class="text-gray-300 text-base" id="comboPlatterDesc">Two teas, two buns, and four biscuits — perfect for sharing and sipping slowly.</p>
+                    <p class="text-orange-300 font-bold mt-2">₹120</p>
+                </div>
+                <!-- Menu Card 6: Herbal Tea -->
+                <div class="menu-item bg-gray-800 bg-opacity-90 border-2 border-dashed border-orange-500 rounded-xl p-6 text-center shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1560960355-4a253480c7d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Herbal Tea" class="w-full h-32 object-cover rounded-md mb-4"/>
+                    <h3 class="font-playfair text-2xl font-semibold text-orange-200 mb-3" id="herbalTeaTitle">Herbal Tea</h3>
+                    <p class="text-gray-300 text-base" id="herbalTeaDesc">Light and caffeine-free blend of tulsi, lemongrass, and mint leaves.</p>
+                    <p class="text-orange-300 font-bold mt-2">₹55</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section bg-black bg-opacity-70 py-16 px-4 md:py-24">
+        <div class="container mx-auto">
+            <h2 class="font-cinzel text-4xl font-bold text-center mb-12 text-white" id="galleryTitle">Photo Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg shadow-lg"/>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqDhM6vNooJ_xtrs3BPCvWBp5jVTjXOPmQujXPB1V9m0Vlax6hSzj0qY_zLTTCK_CbTgmZurRpyV1w8TXVuJlc5CorDSNTY3sG19owtwo8tl1P1GVZyXLFcPGbkKZG3iOVtBxEs=s1360-w1360-h1020-rw" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg shadow-lg"/>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqnFjujw1hqf04-ZmejObExO-Oj3gxYapGWQ0jviXcD8h7_mm235752q_zrvGZM_TnikyPc6FzXeu63kgIAtmbD1CMweDW5P2kdWe8xD9RC9ZuTZtC-GJI97yHGkRDJywaKBU1nOA=s1360-w1360-h1020-rw" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg"/>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqbOpakTB5jPXygbuwiC1joav5EXYRT5HQWj8n3o_4TtuRWAt9u9ct2Hss698mHKv8fl8lzERs3I9931L5Kr_BYqLjxIuzSzyW3VKAnM6mnvWLr804Sv0K4nFUC5zcfqLZwZd-i5g=s1360-w1360-h1020-rw" alt="Gallery Image 4" class="w-full h-64 object-cover rounded-lg shadow-lg"/>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqW8FlbQBBJYFypV2F4TmHcgWgBZbNMU7vfHvL2z9337Y5iF6DqgBcdcRQENxIzZgTMotx6x-4aa3Q8e9W2daCRQj35jYMy7CEHNF-mB0VpIk2wfxXl6V8RQ9cWHzuRs6GQCL-0=s1360-w1360-h1020-rw" alt="Gallery Image 5" class="w-full h-64 object-cover rounded-lg shadow-lg"/>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gallery Image 6" class="w-full h-64 object-cover rounded-lg shadow-lg"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section bg-black bg-opacity-70 py-16 px-4 md:py-24">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="font-cinzel text-4xl font-bold mb-12 text-white" id="testimonialsTitle">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg border-l-4 border-purple-500">
+                    <p class="text-lg italic mb-4 text-white" id="testimonial1Text">"The Irani Chai here is simply divine! Takes me right back to Hyderabad. A must-try with their Bun Maska."</p>
+                    <p class="font-semibold text-purple-200" id="testimonial1Author">- Priya S.</p>
+                    <div class="flex justify-center mt-2">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg border-l-4 border-purple-500">
+                    <p class="text-lg italic mb-4 text-white" id="testimonial2Text">"Always a great experience. The Osmania Biscuits are perfectly crispy and the Chai Special is my go-to for a refreshing twist."</p>
+                    <p class="font-semibold text-purple-200" id="testimonial2Author">- Rajesh K.</p>
+                    <div class="flex justify-center mt-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-black bg-opacity-70 py-16 px-4 md:py-24">
+        <div class="container mx-auto max-w-3xl text-center text-white">
+            <h2 class="font-cinzel text-4xl font-bold mb-10" id="contactTitle">Contact Us</h2>
+            <p class="text-lg leading-relaxed mb-8">
+                <strong class="block text-xl mb-2" id="addressLabel">📍 Address:</strong> <span id="addressText">Shop No 01, Rathod Building, Solapur Rd, opp. Mughalkhod Matha, Adarsh Nagar, Vijayapura, Karnataka 586101</span><br/>
+                <strong class="block text-xl mb-2 mt-4" id="phoneLabel">📞 Phone:</strong> <a href="tel:+919972611989" class="text-orange-400 hover:text-orange-500 transition duration-300 ease-in-out">099726 11989</a><br/>
+                <strong class="block text-xl mb-2 mt-4" id="openLabel">⏰ Open:</strong> <span id="openText">Everyday from 6 AM to 11 PM</span>
+            </p>
+            <!-- Responsive Google Map Embed -->
+            <div class="relative w-full h-96 rounded-xl overflow-hidden shadow-xl">
+                <iframe
+                    class="absolute top-0 left-0 w-full h-full border-none"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.0211910271034!2d75.71960257467611!3d16.818464619717154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc65306631853d9%3A0x6618e7e2311f43a9!2sRathod%20Building!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <!-- Social Media Integration -->
+            <div class="mt-8">
+                <h3 class="font-cinzel text-2xl font-bold mb-4" id="followUsTitle">Follow Us</h3>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-white hover:text-orange-400 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/40x40/FFFFFF/000000?text=FB" alt="Facebook" class="w-8 h-8"/>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-400 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/40x40/FFFFFF/000000?text=IG" alt="Instagram" class="w-8 h-8"/>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-400 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/40x40/FFFFFF/000000?text=X" alt="Twitter" class="w-8 h-8"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-opacity-90 bg-gray-900 text-center py-6 text-gray-300 text-sm">
+        <p class="mb-1" id="footerRights">&copy; 2025 Arjun’s Irani Chai. All rights reserved.</p>
+        <p id="footerTagline">Authentic Irani Chai | Since 2022 | Made with ❤ in Vijayapura</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">⬆</button>
+
+    <script>
+        // Language content mapping
+        const translations = {
+            'en': {
+                headerTitle: 'Arjun’s Irani Chai',
+                headerTagline: 'Served the way it was meant to be.',
+                headerButton: 'View Menu',
+                aboutTitle: 'About Us',
+                aboutText: 'Welcome to Arjun’s Irani Chai, where every sip takes you back in time. We bring you the traditional Irani chai experience — strong, sweet, brewed with spices, served in kulhad (clay cups), and enjoyed with stories of old Hyderabad.',
+                menuTitle: 'Our Menu',
+                chaiClassicTitle: 'Classic Irani Chai',
+                chaiClassicDesc: 'Strong black tea with milk, sugar & cardamom. Served in clay kulhad.',
+                bunMaskaTitle: 'Bun Maska',
+                bunMaskaDesc: 'Soft bun with fresh butter, perfect for dipping in hot tea.',
+                osmaniaBiscuitsTitle: 'Osmania Biscuits',
+                osmaniaBiscuitsDesc: 'Crispy biscuits made with love and a secret recipe passed down generations.',
+                chaiSpecialTitle: 'Chai Special',
+                chaiSpecialDesc: 'Tea with a twist — ginger, tulsi, or mint infused for extra refreshment.',
+                comboPlatterTitle: 'Combo Platter',
+                comboPlatterDesc: 'Two teas, two buns, and four biscuits — perfect for sharing and sipping slowly.',
+                herbalTeaTitle: 'Herbal Tea',
+                herbalTeaDesc: 'Light and caffeine-free blend of tulsi, lemongrass, and mint leaves.',
+                galleryTitle: 'Photo Gallery',
+                testimonialsTitle: 'What Our Customers Say',
+                testimonial1Text: '"The Irani Chai here is simply divine! Takes me right back to Hyderabad. A must-try with their Bun Maska."',
+                testimonial1Author: '- Priya S.',
+                testimonial2Text: '"Always a great experience. The Osmania Biscuits are perfectly crispy and the Chai Special is my go-to for a refreshing twist."',
+                testimonial2Author: '- Rajesh K.',
+                contactTitle: 'Contact Us',
+                addressLabel: '📍 Address:',
+                addressText: 'Shop No 01, Rathod Building, Solapur Rd, opp. Mughalkhod Matha, Adarsh Nagar, Vijayapura, Karnataka 586101',
+                phoneLabel: '📞 Phone:',
+                openLabel: '⏰ Open:',
+                openText: 'Everyday from 6 AM to 11 PM',
+                followUsTitle: 'Follow Us',
+                footerRights: '&copy; 2025 Arjun’s Irani Chai. All rights reserved.',
+                footerTagline: 'Authentic Irani Chai | Since 2022 | Made with ❤ in Vijayapura'
+            },
+            'kn': {
+                headerTitle: 'ಅರ್ಜುನ್ ಇರಾನಿ ಚಹಾ',
+                headerTagline: 'ಅದನ್ನು ನೀಡಬೇಕಾದ ರೀತಿಯಲ್ಲಿ ನೀಡಲಾಗುತ್ತದೆ.',
+                headerButton: 'ಮೆನು ವೀಕ್ಷಿಸಿ',
+                aboutTitle: 'ನಮ್ಮ ಬಗ್ಗೆ',
+                aboutText: 'ಅರ್ಜುನ್ ಇರಾನಿ ಚಹಾಗೆ ಸ್ವಾಗತ, ಇಲ್ಲಿ ಪ್ರತಿ ಸಿಪ್ ನಿಮ್ಮನ್ನು ಹಿಂದಿನ ಕಾಲಕ್ಕೆ ಕರೆದೊಯ್ಯುತ್ತದೆ. ನಾವು ನಿಮಗೆ ಸಾಂಪ್ರದಾಯಿಕ ಇರಾನಿ ಚಹಾ ಅನುಭವವನ್ನು ತರುತ್ತೇವೆ — ಬಲವಾದ, ಸಿಹಿ, ಮಸಾಲೆಗಳೊಂದಿಗೆ ತಯಾರಿಸಲ್ಪಟ್ಟ, ಕುಲ್ಹಾದ್‌ಗಳಲ್ಲಿ (ಮಣ್ಣಿನ ಕಪ್‌ಗಳು) ಬಡಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಹಳೆಯ ಹೈದರಾಬಾದ್ ಕಥೆಗಳೊಂದಿಗೆ ಆನಂದಿಸಲಾಗುತ್ತದೆ.',
+                menuTitle: 'ನಮ್ಮ ಮೆನು',
+                chaiClassicTitle: 'ಕ್ಲಾಸಿಕ್ ಇರಾನಿ ಚಹಾ',
+                chaiClassicDesc: 'ಹಾಲು, ಸಕ್ಕರೆ ಮತ್ತು ಏಲಕ್ಕಿಯೊಂದಿಗೆ ಬಲವಾದ ಕಪ್ಪು ಚಹಾ. ಮಣ್ಣಿನ ಕುಲ್ಹಾದ್‌ಗಳಲ್ಲಿ ಬಡಿಸಲಾಗುತ್ತದೆ.',
+                bunMaskaTitle: 'ಬನ್ ಮಸ್ಕಾ',
+                bunMaskaDesc: 'ತಾಜಾ ಬೆಣ್ಣೆಯೊಂದಿಗೆ ಮೃದುವಾದ ಬನ್, ಬಿಸಿ ಚಹಾದಲ್ಲಿ ಅದ್ದಲು ಸೂಕ್ತವಾಗಿದೆ.',
+                osmaniaBiscuitsTitle: 'ಓಸ್ಮಾನಿಯಾ ಬಿಸ್ಕತ್ತುಗಳು',
+                osmaniaBiscuitsDesc: 'ಪೀಳಿಗೆಯಿಂದ ಪೀಳಿಗೆಗೆ ಬಂದ ರಹಸ್ಯ ಪಾಕವಿಧಾನದೊಂದಿಗೆ ಪ್ರೀತಿಯಿಂದ ತಯಾರಿಸಿದ ಗರಿಗರಿಯಾದ ಬಿಸ್ಕತ್ತುಗಳು.',
+                chaiSpecialTitle: 'ಚಹಾ ಸ್ಪೆಷಲ್',
+                chaiSpecialDesc: 'ಹೆಚ್ಚುವರಿ ರಿಫ್ರೆಶ್‌ಮೆಂಟ್‌ಗಾಗಿ ಶುಂಠಿ, ತುಳಸಿ ಅಥವಾ ಪುದೀನ ಮಿಶ್ರಿತ ಚಹಾ.',
+                comboPlatterTitle: 'ಕಾಂಬೊ ಪ್ಲೇಟರ್',
+                comboPlatterDesc: 'ಎರಡು ಚಹಾ, ಎರಡು ಬನ್ ಮತ್ತು ನಾಲ್ಕು ಬಿಸ್ಕತ್ತುಗಳು — ಹಂಚಿಕೊಳ್ಳಲು ಮತ್ತು ನಿಧಾನವಾಗಿ ಸವಿಯಲು ಸೂಕ್ತವಾಗಿದೆ.',
+                herbalTeaTitle: 'ಹರ್ಬಲ್ ಚಹಾ',
+                herbalTeaDesc: 'ತುಳಸಿ, ನಿಂಬೆ ಹುಲ್ಲು ಮತ್ತು ಪುದೀನ ಎಲೆಗಳ ಲಘು ಮತ್ತು ಕೆಫೀನ್-ಮುಕ್ತ ಮಿಶ್ರಣ.',
+                galleryTitle: 'ಫೋಟೋ ಗ್ಯಾಲರಿ',
+                testimonialsTitle: 'ನಮ್ಮ ಗ್ರಾಹಕರು ಏನು ಹೇಳುತ್ತಾರೆ',
+                testimonial1Text: 'ಇಲ್ಲಿನ ಇರಾನಿ ಚಹಾ ಅದ್ಭುತವಾಗಿದೆ! ಇದು ನನ್ನನ್ನು ಹೈದರಾಬಾದ್‌ಗೆ ಕರೆದೊಯ್ಯುತ್ತದೆ. ಅವರ ಬನ್ ಮಸ್ಕಾದೊಂದಿಗೆ ಇದನ್ನು ಖಂಡಿತಾ ಪ್ರಯತ್ನಿಸಲೇಬೇಕು.',
+                testimonial1Author: '- ಪ್ರಿಯಾ ಎಸ್.',
+                testimonial2Text: 'ಯಾವಾಗಲೂ ಉತ್ತಮ ಅನುಭವ. ಓಸ್ಮಾನಿಯಾ ಬಿಸ್ಕತ್ತುಗಳು ಸಂಪೂರ್ಣವಾಗಿ ಗರಿಗರಿಯಾಗಿವೆ ಮತ್ತು ಚಹಾ ಸ್ಪೆಷಲ್ ನನಗೆ ರಿಫ್ರೆಶ್ ಅನುಭವ ನೀಡುತ್ತದೆ.',
+                testimonial2Author: '- ರಾಜೇಶ್ ಕೆ.',
+                contactTitle: 'ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ',
+                addressLabel: '📍 ವಿಳಾಸ:',
+                addressText: 'ಅಂಗಡಿ ಸಂಖ್ಯೆ 01, ರಾಥೋಡ್ ಕಟ್ಟಡ, ಸೋಲಾಪುರ ರಸ್ತೆ, ಮುಘಲ್‌ಖೋಡ್ ಮಠದ ಎದುರು, ಆದರ್ಶ ನಗರ, ವಿಜಯಪುರ, ಕರ್ನಾಟಕ 586101',
+                phoneLabel: '📞 ದೂರವಾಣಿ:',
+                openLabel: '⏰ ತೆರೆದಿರುವ ಸಮಯ:',
+                openText: 'ಪ್ರತಿದಿನ ಬೆಳಿಗ್ಗೆ 6 ರಿಂದ ರಾತ್ರಿ 11 ರವರೆಗೆ',
+                followUsTitle: 'ನಮ್ಮನ್ನು ಅನುಸರಿಸಿ',
+                footerRights: '&copy; 2025 ಅರ್ಜುನ್ ಇರಾನಿ ಚಹಾ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.',
+                footerTagline: 'ಅಧಿಕೃತ ಇರಾನಿ ಚಹಾ | 2022 ರಿಂದ | ವಿಜಯಪುರದಲ್ಲಿ ❤ ಇಂದ ತಯಾರಿಸಲ್ಪಟ್ಟಿದೆ'
+            }
+        };
+
+        // Function to set the language
+        function setLanguage(lang) {
+            const currentTranslations = translations[lang];
+            for (const key in currentTranslations) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = currentTranslations[key];
+                }
+            }
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage('en');
+        });
+
+        // Scroll to Top Button
+        let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
+yeh try kar
