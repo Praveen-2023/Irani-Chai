@@ -104,6 +104,20 @@
             .grid {
                 grid-template-columns: 1fr !important;
             }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
         }
     </style>
 </head>
@@ -112,7 +126,14 @@
     <nav class="bg-opacity-90 bg-gray-900 py-4 sticky top-0 z-[999]">
         <div class="container mx-auto flex justify-between items-center px-4">
             <a href="#" class="logo">Arjun’s Irani Chai</a>
-            <div class="flex items-center space-x-8">
+            <div class="md:hidden">
+                <button id="hamburger" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
                 <div class="flex space-x-4">
                     <a href="#about" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">About</a>
                     <a href="#menu" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Menu</a>
@@ -124,6 +145,17 @@
                     <button onclick="setLanguage('en')" class="text-white text-sm font-bold bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md transition duration-300 ease-in-out">English</button>
                     <button onclick="setLanguage('kn')" class="text-white text-sm font-bold bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md transition duration-300 ease-in-out">ಕನ್ನಡ</button>
                 </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden nav-links">
+            <a href="#about" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">About</a>
+            <a href="#menu" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Menu</a>
+            <a href="#gallery" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Gallery</a>
+            <a href="#reviews" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Reviews</a>
+            <a href="#contact" class="text-white hover:text-orange-300 transition duration-300 ease-in-out">Contact</a>
+            <div class="flex justify-center space-x-2 p-2">
+                <button onclick="setLanguage('en')" class="text-white text-sm font-bold bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md transition duration-300 ease-in-out">English</button>
+                <button onclick="setLanguage('kn')" class="text-white text-sm font-bold bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md transition duration-300 ease-in-out">ಕನ್ನಡ</button>
             </div>
         </div>
     </nav>
@@ -362,6 +394,7 @@
                 footerTagline: 'ಅಧಿಕೃತ ಇರಾನಿ ಚಹಾ | 2022 ರಿಂದ | ವಿಜಯಪುರದಲ್ಲಿ ❤ ಇಂದ ತಯಾರಿಸಲ್ಪಟ್ಟಿದೆ'
             }
         };
+
         // Function to set the language
         function setLanguage(lang) {
             const currentTranslations = translations[lang];
@@ -372,13 +405,24 @@
                 }
             }
         }
+
         // Initialize language on page load
         document.addEventListener('DOMContentLoaded', () => {
             setLanguage('en');
         });
+
+        // Toggle mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+
         // Scroll to Top Button
         let scrollToTopBtn = document.getElementById("scrollToTopBtn");
         window.onscroll = function() {scrollFunction()};
+
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 scrollToTopBtn.style.display = "block";
@@ -386,6 +430,7 @@
                 scrollToTopBtn.style.display = "none";
             }
         }
+
         scrollToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
